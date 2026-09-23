@@ -1,0 +1,17 @@
+{
+  "name": "theo-gaopalelwe-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Professional portfolio for Theo Anold Gaopalelwe — Aspiring BI & Data Analytics, Class of 2028",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "type-check": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "vite": "^5.2.11"
+  }
+}
