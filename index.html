@@ -1,31 +1,676 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Portfolio of Theo Anold Gaopalelwe — Aspiring Business Intelligence & Data Analytics professional, Class of 2028." />
-    <meta name="author" content="Theo Anold Gaopalelwe" />
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Theo Anold Gaopalelwe · Business Intelligence & Data Analytics (2028)</title>
+<meta name="description" content="Portfolio of Theo Anold Gaopalelwe — Aspiring Business Intelligence & Data Analytics professional, Class of 2028." />
+<meta name="author" content="Theo Anold Gaopalelwe" />
 
-    <meta property="og:title" content="Theo Anold Gaopalelwe · BI & Data Analytics Portfolio" />
-    <meta property="og:description" content="Turning raw data into strategic insight. Aspiring BI & Data Analyst, Class of 2028." />
-    <meta property="og:type" content="website" />
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%230b1c2f'/><path d='M18 44V28h8v16h-8zm12 0V20h8v24h-8zm12 0V32h8v12h-8z' fill='%2360a5fa'/></svg>" />
 
-    <title>Theo Anold Gaopalelwe · Business Intelligence & Data Analytics (2028)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&family=JetBrains+Mono:wght@400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-    />
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
-  </body>
+<style>
+:root {
+  --navy: #0b1c2f; --navy-light: #1e2a3a;
+  --blue: #2563eb; --blue-bright: #3b82f6;
+  --blue-soft: #e0edff; --blue-border: #b9d3ff;
+  --slate-50: #f8fafc; --slate-100: #f1f5f9; --slate-200: #e2e8f0;
+  --slate-300: #cbd5e1; --slate-400: #94a3b8; --slate-500: #64748b;
+  --slate-600: #475569; --slate-700: #334155; --white: #fff;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--slate-50);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  color: var(--navy); line-height: 1.6;
+  -webkit-font-smoothing: antialiased; overflow-x: hidden;
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* Reveal */
+.reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+
+/* Navbar */
+.navbar {
+  display: flex; justify-content: space-between; align-items: center;
+  padding: 1.5rem 0; flex-wrap: wrap; gap: 1rem;
+  position: sticky; top: 0;
+  background: rgba(248,250,252,.85);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  z-index: 50; border-bottom: 1px solid transparent; transition: border-color .3s;
+}
+.logo { font-weight: 800; font-size: 1.5rem; letter-spacing: -.02em; display: flex; align-items: center; gap: .5rem; text-decoration: none; color: var(--navy); }
+.logo-mark { width: 40px; height: 40px; background: var(--navy); border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.1rem; }
+.nav-links { display: flex; gap: 2rem; font-weight: 500; font-size: .92rem; align-items: center; }
+.nav-links a { text-decoration: none; color: var(--slate-700); transition: color .2s; position: relative; }
+.nav-links a::after { content: ''; position: absolute; bottom: -4px; left: 0; width: 0; height: 2px; background: var(--blue); transition: width .25s; }
+.nav-links a:hover { color: var(--blue); }
+.nav-links a:hover::after { width: 100%; }
+.nav-links a.nav-cta { background: var(--navy); color: #fff; padding: .55rem 1.2rem; border-radius: 40px; font-size: .85rem; }
+.nav-links a.nav-cta::after { display: none; }
+.nav-links a.nav-cta:hover { background: var(--blue); }
+
+/* Hero */
+.hero { display: flex; align-items: center; justify-content: space-between; padding: 3rem 0 4rem; flex-wrap: wrap; gap: 3rem; }
+.hero-content { flex: 1 1 500px; }
+.badge { display: inline-flex; align-items: center; gap: .5rem; background: var(--blue-soft); color: #1e4fd9; font-weight: 600; font-size: .78rem; letter-spacing: .03em; padding: .4rem 1rem; border-radius: 30px; margin-bottom: 1.5rem; text-transform: uppercase; border: 1px solid var(--blue-border); }
+.pulse { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; animation: pulse 2s infinite; }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(34,197,94,.6);} 70% { box-shadow: 0 0 0 8px rgba(34,197,94,0);} 100% { box-shadow: 0 0 0 0 rgba(34,197,94,0);} }
+.hero h1 { font-size: 3.4rem; font-weight: 800; line-height: 1.1; letter-spacing: -.035em; margin-bottom: 1rem; }
+.hero h1 span { background: linear-gradient(135deg, var(--blue), #7c3aed); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.hero .subtitle { font-size: 1.15rem; color: var(--slate-600); max-width: 560px; margin-bottom: 1.5rem; }
+.hero .location { display: flex; align-items: center; gap: 1.2rem; font-size: .9rem; color: var(--slate-500); margin-bottom: 2rem; flex-wrap: wrap; }
+.hero .location span { display: inline-flex; align-items: center; gap: .4rem; }
+.hero .location i { color: var(--blue); }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 1rem; }
+.btn-primary, .btn-outline { padding: .85rem 1.9rem; border-radius: 40px; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: .6rem; transition: all .2s; font-size: .95rem; border: none; }
+.btn-primary { background: var(--navy); color: #fff; border: 1px solid var(--navy); }
+.btn-primary:hover { background: var(--blue); border-color: var(--blue); transform: translateY(-2px); box-shadow: 0 12px 24px -10px rgba(37,99,235,.5); }
+.btn-outline { background: transparent; color: var(--navy); border: 1.5px solid var(--slate-300); }
+.btn-outline:hover { background: #fff; border-color: var(--blue); color: var(--blue); transform: translateY(-2px); }
+.hero-visual { flex: 1 1 360px; display: flex; justify-content: center; }
+.data-card { background: #fff; border-radius: 2rem; padding: 2rem 1.8rem; box-shadow: 0 25px 50px -12px rgba(11,28,47,.15); border: 1px solid #e9eef3; width: 100%; max-width: 400px; transition: transform .3s; position: relative; }
+.data-card::before { content: ''; position: absolute; top: -1px; left: 2rem; right: 2rem; height: 3px; background: linear-gradient(90deg, var(--blue), #7c3aed); border-radius: 0 0 3px 3px; }
+.data-card:hover { transform: translateY(-4px); }
+.card-header { display: flex; align-items: center; gap: .8rem; margin-bottom: 1.5rem; }
+.card-header i { font-size: 1.5rem; color: var(--blue); background: var(--blue-soft); padding: .7rem; border-radius: 1rem; }
+.card-header h3 { font-weight: 700; font-size: 1.15rem; }
+.card-header small { display: block; color: var(--slate-500); font-weight: 500; font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; }
+.stat-row { display: flex; justify-content: space-between; align-items: center; padding: .85rem 0; border-bottom: 1px solid #edf2f7; font-size: .9rem; }
+.stat-row:last-of-type { border-bottom: none; }
+.stat-label { color: var(--slate-600); display: flex; align-items: center; gap: .6rem; }
+.stat-label i { width: 1.1rem; color: var(--blue); font-size: .85rem; }
+.stat-value { font-weight: 600; }
+.progress-bar { width: 70px; height: 6px; background: var(--slate-100); border-radius: 10px; overflow: hidden; margin-left: .5rem; display: inline-block; vertical-align: middle; }
+.progress-fill { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), #7c3aed); border-radius: 10px; }
+.highlight { background: #dcfce7; color: #166534; padding: .2rem .7rem; border-radius: 30px; font-size: .75rem; font-weight: 600; }
+
+/* Sections */
+section { scroll-margin-top: 80px; }
+.section-heading { font-size: .78rem; text-transform: uppercase; letter-spacing: .12em; color: var(--blue); font-weight: 700; margin-bottom: .6rem; display: flex; align-items: center; gap: .5rem; }
+.section-heading::before { content: ''; width: 24px; height: 2px; background: var(--blue); }
+.section-title { font-size: 2.2rem; font-weight: 800; letter-spacing: -.025em; margin-bottom: .8rem; }
+.section-subtitle { font-size: 1.05rem; color: var(--slate-600); max-width: 620px; margin-bottom: 2.5rem; }
+
+/* About */
+.about-section { padding: 4rem 0 2rem; }
+.about-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 3rem; align-items: start; }
+.about-text p { color: var(--slate-600); font-size: 1.02rem; margin-bottom: 1.2rem; }
+.about-text strong { color: var(--navy); font-weight: 600; }
+.about-text em { color: var(--navy); font-style: italic; }
+.about-highlights { display: flex; flex-direction: column; gap: 1rem; }
+.highlight-item { display: flex; gap: 1rem; align-items: flex-start; background: #fff; padding: 1.2rem; border-radius: 1.2rem; border: 1px solid #e9eef3; transition: all .2s; }
+.highlight-item:hover { border-color: var(--blue-border); box-shadow: 0 8px 20px -12px rgba(37,99,235,.3); }
+.highlight-item i { color: var(--blue); font-size: 1.1rem; background: var(--blue-soft); width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.highlight-item h4 { font-size: .95rem; font-weight: 600; margin-bottom: .2rem; }
+.highlight-item p { font-size: .85rem; color: var(--slate-500); }
+
+/* Skills */
+.skills-section { padding: 4rem 0; background: #fff; border-radius: 3rem 3rem 0 0; margin-top: 2rem; }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.8rem; }
+.skill-category { background: var(--slate-50); padding: 1.8rem 1.6rem; border-radius: 1.8rem; border: 1px solid #e9eef3; transition: all .25s; }
+.skill-category:hover { border-color: var(--blue-border); background: #fff; box-shadow: 0 16px 32px -16px rgba(37,99,235,.15); transform: translateY(-4px); }
+.skill-icon { background: var(--blue-soft); width: 48px; height: 48px; border-radius: 1.2rem; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--blue); margin-bottom: 1.2rem; }
+.skill-category h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1rem; }
+.skill-list { list-style: none; }
+.skill-list li { display: flex; align-items: center; justify-content: space-between; gap: .5rem; font-size: .88rem; color: var(--slate-600); padding: .4rem 0; }
+.skill-name { display: flex; align-items: center; gap: .5rem; }
+.skill-name i { color: var(--blue); font-size: .55rem; }
+.skill-level { font-size: .7rem; font-weight: 600; padding: .15rem .55rem; border-radius: 20px; }
+.skill-level.adv { background: #dcfce7; color: #166534; }
+.skill-level.int { background: #dbeafe; color: #1e40af; }
+.skill-level.beg { background: #fef3c7; color: #92400e; }
+
+/* Timeline */
+.experience-section { padding: 5rem 0 2rem; }
+.timeline { position: relative; padding-left: 2rem; border-left: 2px solid var(--slate-200); margin-left: .5rem; }
+.timeline-item { position: relative; padding-bottom: 2.5rem; }
+.timeline-item:last-child { padding-bottom: 0; }
+.timeline-item::before { content: ''; position: absolute; left: -2.6rem; top: .3rem; width: 14px; height: 14px; background: var(--blue); border: 3px solid var(--slate-50); border-radius: 50%; box-shadow: 0 0 0 3px var(--blue-soft); }
+.timeline-date { font-size: .8rem; font-weight: 600; color: var(--blue); text-transform: uppercase; letter-spacing: .06em; margin-bottom: .3rem; }
+.timeline-item h3 { font-size: 1.2rem; font-weight: 700; margin-bottom: .2rem; }
+.timeline-org { font-size: .92rem; color: var(--slate-500); font-weight: 500; margin-bottom: .8rem; }
+.timeline-item p { font-size: .95rem; color: var(--slate-600); max-width: 680px; }
+.timeline-tags { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+.timeline-tags span { font-size: .75rem; background: var(--blue-soft); color: #1e40af; padding: .25rem .75rem; border-radius: 30px; font-weight: 500; }
+
+/* Projects */
+.projects-section { padding: 5rem 0; }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.8rem; }
+.project-card { background: #fff; border-radius: 2rem; padding: 2rem 1.8rem; border: 1px solid #e9eef3; transition: all .3s; display: flex; flex-direction: column; position: relative; overflow: hidden; }
+.project-card::after { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), #7c3aed); transform: scaleX(0); transform-origin: left; transition: transform .3s; }
+.project-card:hover::after { transform: scaleX(1); }
+.project-card:hover { transform: translateY(-6px); border-color: var(--slate-300); box-shadow: 0 24px 40px -20px rgba(11,28,47,.18); }
+.project-tag { display: inline-block; background: var(--blue-soft); color: var(--blue); font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: .3rem .9rem; border-radius: 40px; margin-bottom: 1.2rem; width: fit-content; }
+.project-card h3 { font-size: 1.25rem; font-weight: 700; margin-bottom: .7rem; line-height: 1.3; }
+.project-card > p { font-size: .92rem; color: var(--slate-600); margin-bottom: 1.2rem; line-height: 1.65; flex-grow: 1; }
+.project-outcomes { list-style: none; margin-bottom: 1.2rem; }
+.project-outcomes li { font-size: .85rem; color: var(--slate-600); padding: .2rem 0; display: flex; gap: .5rem; }
+.project-outcomes li i { color: #22c55e; font-size: .7rem; margin-top: .45rem; }
+.project-meta { display: flex; align-items: center; justify-content: space-between; font-size: .82rem; color: var(--blue); font-weight: 600; border-top: 1px solid #edf2f7; padding-top: 1.1rem; margin-top: auto; }
+.project-meta i { margin-right: .3rem; }
+.project-link { color: var(--slate-500); text-decoration: none; font-weight: 500; font-size: .8rem; }
+.project-link:hover { color: var(--blue); }
+
+/* Certs */
+.certs-section { padding: 2rem 0 5rem; }
+.certs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+.cert-card { background: #fff; border: 1px solid #e9eef3; border-radius: 1.5rem; padding: 1.5rem; display: flex; gap: 1rem; align-items: flex-start; transition: all .2s; }
+.cert-card:hover { border-color: var(--blue-border); transform: translateY(-3px); box-shadow: 0 12px 24px -14px rgba(37,99,235,.25); }
+.cert-badge { width: 46px; height: 46px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; color: #fff; }
+.cert-badge.blue { background: linear-gradient(135deg, #2563eb, #3b82f6); }
+.cert-badge.purple { background: linear-gradient(135deg, #7c3aed, #a855f7); }
+.cert-badge.green { background: linear-gradient(135deg, #059669, #10b981); }
+.cert-badge.amber { background: linear-gradient(135deg, #d97706, #f59e0b); }
+.cert-badge.slate { background: linear-gradient(135deg, #475569, #64748b); }
+.cert-info h4 { font-size: .95rem; font-weight: 700; margin-bottom: .2rem; }
+.cert-info p { font-size: .82rem; color: var(--slate-500); }
+.cert-status { display: inline-block; font-size: .68rem; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; padding: .15rem .6rem; border-radius: 20px; margin-top: .5rem; }
+.cert-status.progress { background: #fef3c7; color: #92400e; }
+.cert-status.done { background: #dcfce7; color: #166534; }
+
+/* Education */
+.education-section { padding: 2rem 0 5rem; }
+.edu-card { background: #fff; border-radius: 2rem; padding: 2rem; border: 1px solid #e9eef3; display: flex; flex-wrap: wrap; gap: 1.5rem; align-items: flex-start; margin-bottom: 1.5rem; }
+.edu-icon { color: #fff; width: 60px; height: 60px; border-radius: 1.4rem; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; flex-shrink: 0; }
+.edu-details { flex: 1; min-width: 260px; }
+.edu-details .year { font-weight: 600; color: var(--blue); font-size: .85rem; letter-spacing: .03em; margin-bottom: .2rem; text-transform: uppercase; }
+.edu-details h3 { font-size: 1.4rem; font-weight: 700; margin-bottom: .3rem; }
+.edu-details .institution { font-size: .95rem; color: var(--slate-500); font-weight: 500; margin-bottom: .8rem; }
+.edu-details p { color: var(--slate-600); font-size: .95rem; max-width: 700px; }
+.edu-highlight { display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 1rem; }
+.edu-highlight span { background: var(--slate-100); padding: .3rem .9rem; border-radius: 30px; font-size: .8rem; font-weight: 500; display: inline-flex; align-items: center; gap: .3rem; }
+.edu-highlight span i { color: #f59e0b; font-size: .75rem; }
+
+/* Contact */
+.contact-section { background: var(--navy); color: #fff; padding: 5rem 0 2rem; border-radius: 3rem 3rem 0 0; margin-top: 3rem; position: relative; overflow: hidden; }
+.contact-section::before { content: ''; position: absolute; top: -100px; right: -100px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(37,99,235,.25), transparent 70%); border-radius: 50%; pointer-events: none; }
+.contact-grid { display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 3rem; margin-bottom: 3rem; position: relative; z-index: 1; }
+.contact-left h2 { font-size: 2.4rem; font-weight: 800; letter-spacing: -.03em; margin-bottom: 1rem; line-height: 1.15; }
+.contact-left h2 span { background: linear-gradient(135deg, #60a5fa, #a78bfa); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.contact-left > p { color: var(--slate-300); max-width: 480px; font-size: 1.05rem; margin-bottom: 2rem; }
+.contact-methods { display: flex; flex-direction: column; gap: .8rem; margin-bottom: 2rem; }
+.contact-method { display: flex; align-items: center; gap: 1rem; background: var(--navy-light); padding: 1rem 1.4rem; border-radius: 1rem; text-decoration: none; color: #fff; transition: all .2s; border: 1px solid #2d3f54; max-width: 420px; }
+.contact-method:hover { background: #1e3a5f; border-color: var(--blue-bright); transform: translateX(4px); }
+.contact-method i { color: #60a5fa; font-size: 1.2rem; width: 24px; text-align: center; }
+.contact-method .label { font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; color: var(--slate-400); font-weight: 600; }
+.contact-method .value { font-size: .95rem; font-weight: 500; }
+.contact-social { display: flex; gap: .8rem; margin-top: 1.5rem; }
+.contact-social a { color: var(--slate-300); font-size: 1.1rem; width: 44px; height: 44px; border-radius: 12px; background: var(--navy-light); border: 1px solid #2d3f54; display: flex; align-items: center; justify-content: center; transition: all .2s; text-decoration: none; }
+.contact-social a:hover { color: #fff; background: var(--blue); border-color: var(--blue); transform: translateY(-3px); }
+.contact-right { display: flex; flex-direction: column; gap: 1.2rem; }
+.availability-card { background: linear-gradient(135deg, rgba(37,99,235,.15), rgba(124,58,237,.12)); border: 1px solid rgba(96,165,250,.3); border-radius: 1.5rem; padding: 1.6rem; }
+.availability-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: .8rem; display: flex; align-items: center; gap: .5rem; }
+.availability-card h4 i { color: #4ade80; }
+.availability-card p { font-size: .9rem; color: var(--slate-300); line-height: 1.6; }
+.availability-card strong { color: #fff; font-weight: 600; }
+.quote-card { background: var(--navy-light); border-radius: 1.5rem; padding: 1.8rem; border: 1px solid #2d3f54; }
+.quote-card i.quote-icon { color: #60a5fa; font-size: 1.5rem; margin-bottom: .8rem; display: block; }
+.quote-card p { color: #e2e8f0; font-size: .98rem; font-style: italic; line-height: 1.65; margin-bottom: .8rem; }
+.quote-card .attribution { color: var(--slate-400); font-size: .82rem; font-style: normal; }
+.footer-bottom { border-top: 1px solid #1e2a3a; padding-top: 2rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; font-size: .85rem; color: var(--slate-400); position: relative; z-index: 1; }
+.footer-bottom i { color: #60a5fa; margin-right: .35rem; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  .container { padding: 0 1.25rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .nav-links { gap: 1.2rem; flex-wrap: wrap; width: 100%; }
+  .section-title { font-size: 1.85rem; }
+  .contact-left h2 { font-size: 1.9rem; }
+  .timeline { padding-left: 1.5rem; }
+  .timeline-item::before { left: -2.1rem; }
+}
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .hero .subtitle { font-size: 1rem; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-outline { justify-content: center; }
+  .data-card { padding: 1.5rem 1.2rem; }
+  .stat-row { font-size: .82rem; }
+  .progress-bar { width: 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  .reveal { opacity: 1; transform: none; }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+  <!-- NAVBAR -->
+  <nav class="navbar" aria-label="Primary navigation">
+    <a href="#" class="logo">
+      <span class="logo-mark"><i class="fas fa-chart-pie"></i></span>
+      Theo G.
+    </a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav-cta">Let's talk</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <header class="hero" id="top">
+    <div class="hero-content">
+      <div class="badge">
+        <span class="pulse"></span>
+        Open to 2025/26 internships &amp; graduate roles
+      </div>
+      <h1>Theo Anold<br><span>Gaopalelwe</span></h1>
+      <p class="subtitle">
+        Aspiring Business Intelligence &amp; Data Analytics professional (Class of 2028)
+        turning raw data into strategic insight — one dashboard, query, and story at a time.
+      </p>
+      <div class="location">
+        <span><i class="fas fa-map-pin"></i> Johannesburg, South Africa</span>
+        <span><i class="fas fa-briefcase"></i> Remote-friendly</span>
+        <span><i class="fas fa-language"></i> English, Setswana</span>
+      </div>
+      <div class="hero-cta">
+        <a href="#contact" class="btn-primary"><i class="fas fa-paper-plane"></i> Get in touch</a>
+        <a href="#projects" class="btn-outline"><i class="fas fa-folder-open"></i> Explore my work</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="data-card">
+        <div class="card-header">
+          <i class="fas fa-database"></i>
+          <div>
+            <h3>Analytics Snapshot</h3>
+            <small>Updated · 2025</small>
+          </div>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label"><i class="fas fa-code"></i> SQL</span>
+          <span class="stat-value">Intermediate <span class="progress-bar"><span class="progress-fill" style="width:70%"></span></span></span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label"><i class="fas fa-chart-bar"></i> Power BI / Tableau</span>
+          <span class="stat-value">Building <span class="progress-bar"><span class="progress-fill" style="width:55%"></span></span></span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label"><i class="fab fa-python"></i> Python (Pandas)</span>
+          <span class="stat-value">Learning <span class="progress-bar"><span class="progress-fill" style="width:45%"></span></span></span>
+        </div>
+        <div class="stat-row">
+          <span class="stat-label"><i class="fas fa-bullseye"></i> 2028 Goal</span>
+          <span class="stat-value"><span class="highlight">Data Analyst</span></span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ABOUT -->
+  <section id="about" class="about-section reveal">
+    <div class="section-heading">About me</div>
+    <h2 class="section-title">Data with a purpose</h2>
+    <div class="about-grid">
+      <div class="about-text">
+        <p>I'm <strong>Theo Anold Gaopalelwe</strong>, a Business Intelligence &amp; Data Analytics student (Class of 2028) based in Johannesburg. My journey into data started with a simple curiosity: <em>why do some businesses make better decisions than others?</em> The answer, almost always, comes down to how well they understand their data.</p>
+        <p>Today, I'm building the technical and business skills to help organisations answer that question. From writing SQL queries against real datasets to designing Power BI dashboards that non-technical stakeholders can actually use, I focus on <strong>practical, insight-driven work</strong> — not just theory.</p>
+        <p>My goal by 2028 is to step into a Business Intelligence or Data Analytics role where I can combine technical rigour with business acumen — translating messy data into clear, actionable decisions.</p>
+      </div>
+      <div class="about-highlights">
+        <div class="highlight-item"><i class="fas fa-graduation-cap"></i><div><h4>Class of 2028</h4><p>BCom Business Intelligence &amp; Data Analytics</p></div></div>
+        <div class="highlight-item"><i class="fas fa-rocket"></i><div><h4>Hands-on learner</h4><p>6+ self-driven data projects &amp; continuous skill building</p></div></div>
+        <div class="highlight-item"><i class="fas fa-handshake"></i><div><h4>Team player</h4><p>Collaborative, communicative, and eager to learn from mentors</p></div></div>
+        <div class="highlight-item"><i class="fas fa-globe"></i><div><h4>Remote-ready</h4><p>Comfortable with distributed teams and async collaboration</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="skills-section reveal">
+    <div class="section-heading">Core capabilities</div>
+    <h2 class="section-title">The analytics toolkit</h2>
+    <p class="section-subtitle">A growing toolkit built through coursework, self-study, and applied projects — with honest, real proficiency levels.</p>
+    <div class="skills-grid">
+      <div class="skill-category">
+        <div class="skill-icon"><i class="fas fa-chart-simple"></i></div>
+        <h4>Data Analysis</h4>
+        <ul class="skill-list">
+          <li><span class="skill-name"><i class="fas fa-circle"></i> SQL (PostgreSQL, MySQL)</span><span class="skill-level int">Intermediate</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Excel (Power Query, Pivot)</span><span class="skill-level adv">Advanced</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Data cleaning &amp; prep</span><span class="skill-level int">Intermediate</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Statistical foundations</span><span class="skill-level int">Intermediate</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> EDA &amp; insight synthesis</span><span class="skill-level int">Intermediate</span></li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+        <h4>BI &amp; Visualization</h4>
+        <ul class="skill-list">
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Power BI (DAX, reports)</span><span class="skill-level int">Intermediate</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Tableau (foundations)</span><span class="skill-level beg">Beginner</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Dashboard design</span><span class="skill-level int">Intermediate</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> KPI definition &amp; tracking</span><span class="skill-level int">Intermediate</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Data storytelling</span><span class="skill-level int">Intermediate</span></li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <div class="skill-icon"><i class="fas fa-gear"></i></div>
+        <h4>Technical Foundations</h4>
+        <ul class="skill-list">
+          <li><span class="skill-name"><i class="fab fa-python"></i> Python (Pandas, NumPy)</span><span class="skill-level beg">Beginner</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Git &amp; version control</span><span class="skill-level beg">Beginner</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Relational DB design</span><span class="skill-level beg">Beginner</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Data modeling basics</span><span class="skill-level beg">Beginner</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Excel automation</span><span class="skill-level int">Intermediate</span></li>
+        </ul>
+      </div>
+      <div class="skill-category">
+        <div class="skill-icon"><i class="fas fa-users"></i></div>
+        <h4>Business Acumen</h4>
+        <ul class="skill-list">
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Requirements gathering</span><span class="skill-level int">Intermediate</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Stakeholder communication</span><span class="skill-level int">Intermediate</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Process improvement</span><span class="skill-level beg">Beginner</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Critical thinking</span><span class="skill-level adv">Advanced</span></li>
+          <li><span class="skill-name"><i class="fas fa-circle"></i> Project documentation</span><span class="skill-level int">Intermediate</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="experience-section reveal">
+    <div class="section-heading">Journey so far</div>
+    <h2 class="section-title">Experience &amp; involvement</h2>
+    <p class="section-subtitle">Practical experience gathered through academic projects, student leadership, and self-driven learning.</p>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-date">Feb 2025 – Present</div>
+        <h3>Analytics Peer Tutor</h3>
+        <div class="timeline-org">University Analytics Support Centre · Part-time</div>
+        <p>Tutor first- and second-year students in SQL fundamentals, Excel data analysis, and introductory statistics. Break down complex concepts into simple, relatable explanations and help students debug their queries and spreadsheet models.</p>
+        <div class="timeline-tags"><span>SQL</span><span>Excel</span><span>Mentoring</span><span>Communication</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Aug 2024 – Nov 2024</div>
+        <h3>Junior Data Analyst (Virtual Internship)</h3>
+        <div class="timeline-org">Insight Lab Africa · Remote</div>
+        <p>Completed a 12-week virtual internship focused on retail analytics. Cleaned and analysed a 50,000-row sales dataset using SQL and Excel, and built a Power BI dashboard that surfaced regional performance gaps for the client.</p>
+        <div class="timeline-tags"><span>SQL</span><span>Power BI</span><span>Retail analytics</span><span>Client reporting</span></div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-date">Mar 2024 – Present</div>
+        <h3>Member — Data &amp; Analytics Society</h3>
+        <div class="timeline-org">University Student Society</div>
+        <p>Active member of the campus data analytics society. Participate in monthly data challenges, attend industry guest lectures, and collaborate with peers on mini hackathons and case-study competitions.</p>
+        <div class="timeline-tags"><span>Data challenges</span><span>Networking</span><span>Teamwork</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="projects-section reveal">
+    <div class="section-heading">Applied projects</div>
+    <h2 class="section-title">Learning by doing</h2>
+    <p class="section-subtitle">Real datasets, real questions, real dashboards — each project was built to answer a specific business question and practise the full analytics workflow.</p>
+    <div class="projects-grid">
+
+      <article class="project-card">
+        <span class="project-tag">SQL · Analytics</span>
+        <h3>Retail Sales Performance Analysis</h3>
+        <p>Queried a 50,000-row retail database to identify top-performing product categories, seasonal trends, and regional revenue gaps.</p>
+        <ul class="project-outcomes">
+          <li><i class="fas fa-check"></i> Identified 3 underperforming regions costing ~R120k in missed revenue</li>
+          <li><i class="fas fa-check"></i> Wrote 25+ SQL queries using joins, CTEs, and window functions</li>
+          <li><i class="fas fa-check"></i> Presented findings in a 5-slide executive summary</li>
+        </ul>
+        <div class="project-meta"><span><i class="fas fa-database"></i> SQL · Excel</span><a href="#" class="project-link">Case study <i class="fas fa-arrow-right"></i></a></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">Power BI · HR</span>
+        <h3>Employee Attrition Dashboard</h3>
+        <p>Designed an interactive Power BI dashboard exploring turnover drivers across a fictional 1,200-person company with DAX measures.</p>
+        <ul class="project-outcomes">
+          <li><i class="fas fa-check"></i> Built 3 report pages with 12+ visualisations</li>
+          <li><i class="fas fa-check"></i> Wrote DAX for YoY attrition and risk segmentation</li>
+          <li><i class="fas fa-check"></i> Recommended retention focus on 0–2 year tenure band</li>
+        </ul>
+        <div class="project-meta"><span><i class="fas fa-chart-pie"></i> Power BI · DAX</span><a href="#" class="project-link">View dashboard <i class="fas fa-arrow-right"></i></a></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">Python · EDA</span>
+        <h3>COVID-19 Global Data Exploration</h3>
+        <p>Used Python (Pandas, Matplotlib, Seaborn) to analyse global case trends, vaccination rates, and socio-economic correlations.</p>
+        <ul class="project-outcomes">
+          <li><i class="fas fa-check"></i> Cleaned and merged 4 datasets into a single analysis frame</li>
+          <li><i class="fas fa-check"></i> Produced 8 publication-quality visualisations</li>
+          <li><i class="fas fa-check"></i> Documented methodology in a Jupyter notebook</li>
+        </ul>
+        <div class="project-meta"><span><i class="fab fa-python"></i> Python · Pandas</span><a href="#" class="project-link">Notebook <i class="fas fa-arrow-right"></i></a></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">Capstone · In progress</span>
+        <h3>BI Reporting for a Local SME</h3>
+        <p>Partnering with a Johannesburg-based small retail business to build a reporting prototype — from requirements to a working dashboard.</p>
+        <ul class="project-outcomes">
+          <li><i class="fas fa-check"></i> Conducted stakeholder interviews to define 6 core KPIs</li>
+          <li><i class="fas fa-check"></i> Designed data model and ETL process in Power Query</li>
+          <li><i class="fas fa-check"></i> Delivering iterative dashboard feedback sessions</li>
+        </ul>
+        <div class="project-meta"><span><i class="fas fa-briefcase"></i> End-to-end BI</span><a href="#" class="project-link">Project log <i class="fas fa-arrow-right"></i></a></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">Excel · Finance</span>
+        <h3>Personal Budget &amp; Expense Tracker</h3>
+        <p>Built a fully automated Excel budget tracker using Power Query to import bank statements and categorise transactions.</p>
+        <ul class="project-outcomes">
+          <li><i class="fas fa-check"></i> Automated categorisation for 500+ entries/month</li>
+          <li><i class="fas fa-check"></i> Dynamic dashboard with slicers and conditional formatting</li>
+          <li><i class="fas fa-check"></i> Reduced monthly budgeting time from 2 hours to 10 minutes</li>
+        </ul>
+        <div class="project-meta"><span><i class="fas fa-file-excel"></i> Excel · Power Query</span><a href="#" class="project-link">Template <i class="fas fa-arrow-right"></i></a></div>
+      </article>
+
+      <article class="project-card">
+        <span class="project-tag">SQL · Data modeling</span>
+        <h3>Library Management Database</h3>
+        <p>Designed and implemented a normalized relational database for a fictional library system, including ERD and analytical queries.</p>
+        <ul class="project-outcomes">
+          <li><i class="fas fa-check"></i> Designed 3NF schema with 8 interrelated tables</li>
+          <li><i class="fas fa-check"></i> Wrote 20+ analytical queries for reporting</li>
+          <li><i class="fas fa-check"></i> Documented full data dictionary and ERD</li>
+        </ul>
+        <div class="project-meta"><span><i class="fas fa-database"></i> SQL · ERD</span><a href="#" class="project-link">Schema <i class="fas fa-arrow-right"></i></a></div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section class="certs-section reveal">
+    <div class="section-heading">Continuous learning</div>
+    <h2 class="section-title">Certifications &amp; courses</h2>
+    <p class="section-subtitle">Formal learning that supports and extends my university studies.</p>
+    <div class="certs-grid">
+      <div class="cert-card"><div class="cert-badge blue"><i class="fas fa-database"></i></div><div class="cert-info"><h4>SQL for Data Analysis</h4><p>Mode Analytics · SQL Tutorial</p><span class="cert-status done">Completed</span></div></div>
+      <div class="cert-card"><div class="cert-badge purple"><i class="fas fa-chart-pie"></i></div><div class="cert-info"><h4>Power BI Data Analyst Path</h4><p>Microsoft Learn · PL-300 prep</p><span class="cert-status progress">In progress</span></div></div>
+      <div class="cert-card"><div class="cert-badge green"><i class="fab fa-python"></i></div><div class="cert-info"><h4>Python for Data Science</h4><p>freeCodeCamp</p><span class="cert-status done">Completed</span></div></div>
+      <div class="cert-card"><div class="cert-badge amber"><i class="fas fa-chart-line"></i></div><div class="cert-info"><h4>Data Visualization Fundamentals</h4><p>Tableau Public</p><span class="cert-status progress">In progress</span></div></div>
+      <div class="cert-card"><div class="cert-badge slate"><i class="fas fa-file-excel"></i></div><div class="cert-info"><h4>Excel Skills for Business</h4><p>Coursera · Macquarie University</p><span class="cert-status done">Completed</span></div></div>
+      <div class="cert-card"><div class="cert-badge blue"><i class="fas fa-brain"></i></div><div class="cert-info"><h4>Statistics Foundations</h4><p>Khan Academy</p><span class="cert-status done">Completed</span></div></div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="education-section reveal">
+    <div class="section-heading">Academic path</div>
+    <h2 class="section-title">Education</h2>
+    <div class="edu-card">
+      <div class="edu-icon" style="background:#0b1c2f;"><i class="fas fa-university"></i></div>
+      <div class="edu-details">
+        <div class="year">2025 – 2028 (Expected)</div>
+        <h3>BCom in Business Intelligence &amp; Data Analytics</h3>
+        <div class="institution">University of Johannesburg · Johannesburg, South Africa</div>
+        <p>Comprehensive programme covering database management, predictive analytics, data visualisation, business process modelling, and information systems strategy.</p>
+        <div class="edu-highlight">
+          <span><i class="fas fa-star"></i> Dean's list aspiration</span>
+          <span><i class="fas fa-users"></i> Analytics Society member</span>
+          <span><i class="fas fa-chalkboard-user"></i> Peer tutor (SQL &amp; Excel)</span>
+          <span><i class="fas fa-trophy"></i> Hackathon participant</span>
+        </div>
+      </div>
+    </div>
+    <div class="edu-card">
+      <div class="edu-icon" style="background:#1e40af;"><i class="fas fa-school"></i></div>
+      <div class="edu-details">
+        <div class="year">Completed 2024</div>
+        <h3>National Senior Certificate (NSC)</h3>
+        <div class="institution">Secondary School · Gauteng, South Africa</div>
+        <p>Achieved strong results in Mathematics, Physical Sciences, and English. Developed early interest in analytical thinking through mathematics olympiads and science fairs.</p>
+        <div class="edu-highlight">
+          <span><i class="fas fa-star"></i> Mathematics (Distinction)</span>
+          <span><i class="fas fa-star"></i> Physical Sciences</span>
+          <span><i class="fas fa-star"></i> English (Home Language)</span>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- CONTACT + FOOTER -->
+<section id="contact" class="contact-section reveal">
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-left">
+        <h2>Let's build something<br><span>data-driven together.</span></h2>
+        <p>I'm actively seeking internship, vacation work, and graduate opportunities in Business Intelligence, Data Analytics, or Data Science. Whether it's a role, a project collaboration, or just a conversation about data — my inbox is always open.</p>
+        <div class="contact-methods">
+          <a href="mailto:theo.gaopalelwe@gmail.com" class="contact-method">
+            <i class="fas fa-envelope"></i>
+            <div><div class="label">Email</div><div class="value">theo.gaopalelwe@gmail.com</div></div>
+          </a>
+          <a href="tel:+27821234567" class="contact-method">
+            <i class="fas fa-phone"></i>
+            <div><div class="label">Phone</div><div class="value">+27 82 123 4567</div></div>
+          </a>
+          <a href="https://linkedin.com/in/theo-gaopalelwe" target="_blank" rel="noopener" class="contact-method">
+            <i class="fab fa-linkedin-in"></i>
+            <div><div class="label">LinkedIn</div><div class="value">linkedin.com/in/theo-gaopalelwe</div></div>
+          </a>
+          <a href="https://github.com/bida24-072" target="_blank" rel="noopener" class="contact-method">
+            <i class="fab fa-github"></i>
+            <div><div class="label">GitHub</div><div class="value">github.com/bida24-072</div></div>
+          </a>
+        </div>
+        <div class="contact-social">
+          <a href="https://linkedin.com/in/theo-gaopalelwe" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="https://github.com/bida24-072" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://kaggle.com" target="_blank" rel="noopener" aria-label="Kaggle"><i class="fab fa-kaggle"></i></a>
+          <a href="https://x.com" target="_blank" rel="noopener" aria-label="X"><i class="fab fa-x-twitter"></i></a>
+        </div>
+      </div>
+      <div class="contact-right">
+        <div class="availability-card">
+          <h4><i class="fas fa-circle-check"></i> Currently available</h4>
+          <p>Open to <strong>internships</strong>, <strong>vacation work</strong>, and <strong>part-time analyst roles</strong> from mid-2025. Available remotely across South Africa and open to hybrid arrangements in Gauteng.</p>
+        </div>
+        <div class="quote-card">
+          <i class="fas fa-quote-left quote-icon"></i>
+          <p>"Without data, you're just another person with an opinion."</p>
+          <p class="attribution">— W. Edwards Deming</p>
+        </div>
+        <div class="quote-card" style="background: linear-gradient(135deg, rgba(37,99,235,.2), rgba(124,58,237,.15));">
+          <i class="fas fa-lightbulb quote-icon" style="color:#fbbf24;"></i>
+          <p>"The goal is to turn data into information, and information into insight."</p>
+          <p class="attribution">— Carly Fiorina</p>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div><i class="fas fa-copyright"></i> 2025 Theo Anold Gaopalelwe — Aspiring BI &amp; Data Analytics, Class of 2028</div>
+      <div><i class="fas fa-map-pin"></i> Johannesburg, South Africa</div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function () {
+  "use strict";
+
+  // ===== Reveal-on-scroll using IntersectionObserver =====
+  var revealNodes = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealNodes.forEach(function (n) { observer.observe(n); });
+  } else {
+    // Fallback for very old browsers
+    revealNodes.forEach(function (n) { n.classList.add("is-visible"); });
+  }
+
+  // ===== Navbar bottom border on scroll =====
+  var nav = document.querySelector(".navbar");
+  if (nav) {
+    var onScroll = function () {
+      if (window.scrollY > 20) {
+        nav.style.borderBottomColor = "rgba(203, 213, 225, 0.6)";
+      } else {
+        nav.style.borderBottomColor = "transparent";
+      }
+    };
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll();
+  }
+
+  // ===== Smooth anchor scrolling with sticky-nav offset =====
+  document.querySelectorAll('a[href^="#"]').forEach(function (link) {
+    link.addEventListener("click", function (e) {
+      var href = link.getAttribute("href");
+      if (!href || href === "#" || href.length < 2) return;
+      var target = document.querySelector(href);
+      if (!target) return;
+      e.preventDefault();
+      var offset = 70;
+      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+      window.scrollTo({ top: top, behavior: "smooth" });
+    });
+  });
+
+  // ===== Update year in footer dynamically =====
+  var year = new Date().getFullYear();
+  document.querySelectorAll(".footer-bottom i.fa-copyright").forEach(function (icon) {
+    var text = icon.parentElement;
+    if (text) {
+      text.innerHTML = text.innerHTML.replace(/2025/g, String(year));
+    }
+  });
+
+  console.log("%c Theo Anold Gaopalelwe · Portfolio ", "background:#0b1c2f;color:#60a5fa;padding:4px 8px;border-radius:4px;font-weight:bold;");
+  console.log("%c Data with a purpose. Class of 2028. ", "color:#2563eb;font-weight:600;");
+})();
+</script>
+
+</body>
 </html>
