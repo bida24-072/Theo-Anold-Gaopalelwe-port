@@ -797,4 +797,275 @@ section { scroll-margin-top: 80px; }
 .edu-details { flex: 1; min-width: 260px; }
 .edu-details .year {
   font-weight: 600;
-  color
+  color: var(--blue);
+  font-size: 0.85rem;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.2rem;
+  text-transform: uppercase;
+}
+.edu-details h3 {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  letter-spacing: -0.015em;
+}
+.edu-details .institution {
+  font-size: 0.95rem;
+  color: var(--slate-500);
+  font-weight: 500;
+  margin-bottom: 0.8rem;
+}
+.edu-details p {
+  color: var(--slate-600);
+  font-size: 0.95rem;
+  max-width: 700px;
+}
+.edu-highlight {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+.edu-highlight span {
+  background: var(--slate-100);
+  padding: 0.3rem 0.9rem;
+  border-radius: 30px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.edu-highlight span i {
+  color: #f59e0b;
+  font-size: 0.75rem;
+}
+
+/* ============ CONTACT ============ */
+.contact-section {
+  background: var(--navy);
+  color: white;
+  padding: 5rem 0 2rem;
+  border-radius: 3rem 3rem 0 0;
+  margin-top: 3rem;
+  position: relative;
+  overflow: hidden;
+}
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(37, 99, 235, 0.25), transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-left h2 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+.contact-left h2 span {
+  background: linear-gradient(135deg, #60a5fa, #a78bfa);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.contact-left > p {
+  color: var(--slate-300);
+  max-width: 480px;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  margin-bottom: 2rem;
+}
+.contact-method {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--navy-light);
+  padding: 1rem 1.4rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  color: white;
+  transition: all 0.2s ease;
+  border: 1px solid #2d3f54;
+  max-width: 420px;
+}
+.contact-method:hover {
+  background: #1e3a5f;
+  border-color: var(--blue-bright);
+  transform: translateX(4px);
+}
+.contact-method i {
+  color: #60a5fa;
+  font-size: 1.2rem;
+  width: 24px;
+  text-align: center;
+}
+.contact-method .label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--slate-400);
+  font-weight: 600;
+}
+.contact-method .value {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+.contact-social {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
+}
+.contact-social a {
+  color: var(--slate-300);
+  font-size: 1.1rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: var(--navy-light);
+  border: 1px solid #2d3f54;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+.contact-social a:hover {
+  color: white;
+  background: var(--blue);
+  border-color: var(--blue);
+  transform: translateY(-3px);
+}
+
+.contact-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.availability-card {
+  background: linear-gradient(135deg, rgba(37, 99, 235, 0.15), rgba(124, 58, 237, 0.12));
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 1.5rem;
+  padding: 1.6rem;
+}
+.availability-card h4 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.availability-card h4 i { color: #4ade80; }
+.availability-card p {
+  font-size: 0.9rem;
+  color: var(--slate-300);
+  line-height: 1.6;
+}
+.availability-card strong { color: white; font-weight: 600; }
+
+.quote-card {
+  background: var(--navy-light);
+  border-radius: 1.5rem;
+  padding: 1.8rem;
+  border: 1px solid #2d3f54;
+}
+.quote-card i.quote-icon {
+  color: #60a5fa;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  display: block;
+}
+.quote-card p {
+  color: #e2e8f0;
+  font-size: 0.98rem;
+  font-style: italic;
+  line-height: 1.65;
+  margin-bottom: 0.8rem;
+}
+.quote-card .attribution {
+  color: var(--slate-400);
+  font-size: 0.82rem;
+  font-style: normal;
+}
+
+.footer-bottom {
+  border-top: 1px solid #1e2a3a;
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: var(--slate-400);
+  position: relative;
+  z-index: 1;
+}
+.footer-bottom i { color: #60a5fa; margin-right: 0.35rem; }
+.footer-bottom .made-with {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; }
+  .contact-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+  .container { padding: 0 1.25rem; }
+  .hero h1 { font-size: 2.5rem; }
+  .navbar { flex-direction: column; align-items: flex-start; }
+  .nav-links { gap: 1.2rem; flex-wrap: wrap; width: 100%; }
+  .section-title { font-size: 1.85rem; }
+  .contact-left h2 { font-size: 1.9rem; }
+  .timeline { padding-left: 1.5rem; }
+  .timeline-item::before { left: -2.1rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 2rem; }
+  .hero .subtitle { font-size: 1rem; }
+  .hero-cta { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-outline { justify-content: center; }
+  .data-card { padding: 1.5rem 1.2rem; }
+  .stat-row { font-size: 0.82rem; }
+  .progress-bar { width: 50px; }
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  .reveal { opacity: 1; transform: none; }
+}
